@@ -60,6 +60,11 @@
     vim = "nvim";
   };
 
+  programs.zsh = {
+    enable = true;
+    dotDir = ".config/zsh";
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
