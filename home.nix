@@ -63,6 +63,9 @@
   programs.zsh = {
     enable = true;
     dotDir = ".config/zsh";
+    history = {
+      path = "${config.xdg.dataHome}/zsh/zsh_history";
+    };
   };
 
   # Let Home Manager install and manage itself.
