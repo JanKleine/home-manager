@@ -60,6 +60,8 @@
     vim = "nvim";
   };
 
+  xdg.enable = true;
+
   programs.zsh = {
     enable = true;
     dotDir = ".config/zsh";
