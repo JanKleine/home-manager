@@ -54,6 +54,12 @@
     EDITOR = "nvim";
   };
 
+  home.shellAliases = {
+    ".." = "cd ..";
+    "ll" = "ls -lah";
+    vim = "nvim";
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
