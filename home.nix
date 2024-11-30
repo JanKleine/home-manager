@@ -73,6 +73,7 @@
     };
     oh-my-zsh = {
       enable = true;
+      custom = "${config.xdg.configHome}/home-manager/zsh/oh-my-zsh/custom";
     };
   };
 
