@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
-
+let
+  xdg = config.xdg;
+in
 {
   home.username = "jankleine";
   home.homeDirectory = "/Users/jankleine";
@@ -19,19 +21,10 @@
     # pkgs.hello
   ];
 
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
   home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
-
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
+    # Disable generation of .zshenv in home directory. ZDOTDIR is set globally
+    # in /etc/zshenv, which is managed by nix-darwin.
+    ".zshenv".enable = false;
   };
 
   home.sessionVariables = {
@@ -51,13 +44,13 @@
     dotDir = ".config/zsh";
     history = {
       extended = true;
-      path = "${config.xdg.dataHome}/zsh/zsh_history";
+      path = "${xdg.dataHome}/zsh/zsh_history";
       save = 100000;
       size = 100000;
     };
     initExtra = ''
-      source ${config.xdg.configHome}/home-manager/zsh/powerlevel10k/powerlevel10k.zsh-theme
-      source ${config.xdg.configHome}/home-manager/zsh/.p10k.zsh
+      source ${xdg.configHome}/home-manager/zsh/powerlevel10k/powerlevel10k.zsh-theme
+      source ${xdg.configHome}/home-manager/zsh/.p10k.zsh
     '';
   };
 
