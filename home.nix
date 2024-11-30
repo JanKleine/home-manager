@@ -66,7 +66,13 @@
     enable = true;
     dotDir = ".config/zsh";
     history = {
+      extended = true;
       path = "${config.xdg.dataHome}/zsh/zsh_history";
+      save = 100000;
+      size = 100000;
+    };
+    oh-my-zsh = {
+      enable = true;
     };
   };
 
