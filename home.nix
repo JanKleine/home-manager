@@ -56,7 +56,7 @@
 
   home.shellAliases = {
     ".." = "cd ..";
-    "ll" = "ls -lah";
+    "ll" = "ls -lahp --color=auto";
     vim = "nvim";
   };
 
@@ -71,10 +71,10 @@
       save = 100000;
       size = 100000;
     };
-    oh-my-zsh = {
-      enable = true;
-      custom = "${config.xdg.configHome}/home-manager/zsh/oh-my-zsh/custom";
-    };
+    initExtra = ''
+      source ${config.xdg.configHome}/home-manager/zsh/powerlevel10k/powerlevel10k.zsh-theme
+      source ${config.xdg.configHome}/home-manager/zsh/.p10k.zsh
+    '';
   };
 
   # Let Home Manager install and manage itself.
