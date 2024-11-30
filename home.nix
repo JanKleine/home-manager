@@ -34,7 +34,8 @@ in
   home.shellAliases = {
     ".." = "cd ..";
     "ll" = "ls -lahp --color=auto";
-    vim = "nvim";
+    "vim" = "nvim";
+    "hm" = "home-manager";
   };
 
   xdg.enable = true;
@@ -52,6 +53,25 @@ in
       source ${xdg.configHome}/home-manager/zsh/powerlevel10k/powerlevel10k.zsh-theme
       source ${xdg.configHome}/home-manager/zsh/.p10k.zsh
     '';
+    autosuggestion.enable = true;
+    syntaxHighlighting = {
+      enable = true;
+      highlighters = [
+        "brackets"
+      ];
+    };
+    plugins = [
+      {
+        # adds z command for convenient directory switching
+        name = "zsh-z";
+        src = pkgs.fetchFromGitHub {
+          owner = "agkozak";
+          repo = "zsh-z";
+          rev = "afaf296";  # latest commit as of 2024-11-30
+          hash = "sha256-FnGjp/VJLPR6FaODY0GtCwcsTYA4d6D8a6dMmNpXQ+g=";
+        };
+      }
+    ];
   };
 
   programs.fzf.enable = true;
