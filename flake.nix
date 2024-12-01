@@ -1,5 +1,5 @@
 {
-  description = "Home Manager configuration of jankleine";
+  description = "Home Manager configuration of jans ipt account";
 
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
@@ -15,7 +15,7 @@
       system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
     in {
-      homeConfigurations."jankleine" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."ipt" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         # Specify your home configuration modules here, for example,

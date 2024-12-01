@@ -3,8 +3,8 @@ let
   xdg = config.xdg;
 in
 {
-  home.username = "jankleine";
-  home.homeDirectory = "/Users/jankleine";
+  home.username = "ipt";
+  home.homeDirectory = "/Users/ipt";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
