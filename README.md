@@ -3,7 +3,7 @@
 1. Clone Repository
 
 ```
-git clone git@github.com:JanKleine/home-manager.git ~/.config/home-manager`
+git clone --recurse-submodules git@github.com:JanKleine/home-manager.git ~/.config/home-manager
 ```
 
 2. Initialize `home-manager`
