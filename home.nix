@@ -29,6 +29,20 @@ in
 
   home.sessionVariables = {
     EDITOR = "nvim";
+
+    # XDG Data
+    _Z_DATA = "${xdg.dataHome}/z/z";
+    VSCODE_EXTENSIONS = "${xdg.dataHome}/vscode/extensions";
+    AZURE_CONFIG_DIR = "${xdg.dataHome}/azure";
+    TASKDATA = "${xdg.dataHome}/task";
+    CARGO_HOME = "${xdg.dataHome}/cargo";
+    RUSTUP_HOME = "${xdg.dataHome}/rustup";
+    GRADLE_USER_HOME = "${xdg.dataHome}/gradle";
+    LEIN_HOME = "${xdg.dataHome}/lein";
+    VAGRANT_HOME = "${xdg.dataHome}/vagrant";
+    VAGRANT_ALIAS_FILE = "${xdg.dataHome}/vagrant/aliases";
+    GNUPGHOME = "${xdg.dataHome}/gnupg";
+    LESSHISTFILE = "${xdg.dataHome}/lesshst";
   };
 
   home.shellAliases = {
