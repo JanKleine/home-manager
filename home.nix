@@ -56,6 +56,7 @@ in
 
   programs.zsh = {
     enable = true;
+    completionInit = "autoload -U compinit && compinit -u";
     dotDir = ".config/zsh";
     history = {
       extended = true;
