@@ -19,6 +19,9 @@ in
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
+    pkgs.colima
+    pkgs.docker
+    pkgs.k9s
   ];
 
   home.file = {
@@ -29,6 +32,9 @@ in
 
   home.sessionVariables = {
     EDITOR = "nvim";
+
+    # XDG Config
+    DOCKER_CONFIG="${xdg.dataHome}/docker";
 
     # XDG Data
     AZURE_CONFIG_DIR = "${xdg.dataHome}/azure";
