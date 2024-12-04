@@ -22,6 +22,7 @@ in
     pkgs.colima
     pkgs.docker
     pkgs.k9s
+    pkgs.timewarrior
   ];
 
   home.file = {
