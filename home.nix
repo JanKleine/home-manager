@@ -16,12 +16,10 @@ in
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   home.packages = [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
     pkgs.colima
     pkgs.docker
     pkgs.k9s
+    pkgs.pre-commit
     pkgs.timewarrior
   ];
 
