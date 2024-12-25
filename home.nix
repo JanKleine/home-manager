@@ -47,7 +47,6 @@ in
   home.shellAliases = {
     ".." = "cd ..";
     "ll" = "ls -lahp --color=auto";
-    "vim" = "nvim";
     "hm" = "home-manager";
   };
 
@@ -85,6 +84,13 @@ in
         };
       }
     ];
+  };
+
+  programs.neovim = {
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
   };
 
   programs.fzf.enable = true;
