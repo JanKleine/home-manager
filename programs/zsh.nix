@@ -12,6 +12,9 @@ in
   };
 
   home.sessionVariables = {
+    # XDG Config
+    DOCKER_CONFIG="${xdg.configHome}/docker";
+
     # XDG Data
     AZURE_CONFIG_DIR = "${xdg.dataHome}/azure";
     CARGO_HOME = "${xdg.dataHome}/cargo";
