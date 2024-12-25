@@ -20,4 +20,9 @@
     pkgs.inetutils  # telnet and the likes
     pkgs.rustup
   ];
+
+  programs.git = {
+    userName = "Jan Kleine";
+    userEmail = "janpaulkleine@icloud.com";
+  };
 }

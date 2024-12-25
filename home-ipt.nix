@@ -23,4 +23,9 @@
     pkgs.pre-commit
     pkgs.timewarrior
   ];
+
+  programs.git = {
+    userName = "Jan Kleine";
+    userEmail = "jan.kleine@ipt.ch";
+  };
 }
