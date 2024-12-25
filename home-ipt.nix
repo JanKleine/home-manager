@@ -16,8 +16,11 @@ in
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   home.packages = [
-    pkgs.inetutils  # telnet and the likes
-    pkgs.rustup
+    pkgs.colima
+    pkgs.docker
+    pkgs.k9s
+    pkgs.pre-commit
+    pkgs.timewarrior
   ];
 
   home.file = {
@@ -27,6 +30,11 @@ in
   };
 
   home.sessionVariables = {
+    EDITOR = "nvim";
+
+    # XDG Config
+    DOCKER_CONFIG="${xdg.dataHome}/docker";
+
     # XDG Data
     AZURE_CONFIG_DIR = "${xdg.dataHome}/azure";
     CARGO_HOME = "${xdg.dataHome}/cargo";
