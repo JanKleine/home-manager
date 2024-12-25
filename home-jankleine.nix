@@ -3,8 +3,8 @@ let
   xdg = config.xdg;
 in
 {
-  home.username = "ipt";
-  home.homeDirectory = "/Users/ipt";
+  home.username = "jankleine";
+  home.homeDirectory = "/Users/jankleine";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -14,6 +14,10 @@ in
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
+
+  imports = [
+    ./programs
+  ];
 
   home.packages = [
     pkgs.inetutils  # telnet and the likes
@@ -50,40 +54,6 @@ in
 
   xdg.enable = true;
 
-  programs.zsh = {
-    enable = true;
-    completionInit = "autoload -U compinit && compinit -u";
-    dotDir = ".config/zsh";
-    history = {
-      extended = true;
-      path = "${xdg.dataHome}/zsh/zsh_history";
-      save = 100000;
-      size = 100000;
-    };
-    initExtra = ''
-      source ${xdg.configHome}/home-manager/zsh/powerlevel10k/powerlevel10k.zsh-theme
-      source ${xdg.configHome}/home-manager/zsh/.p10k.zsh
-    '';
-    autosuggestion.enable = true;
-    syntaxHighlighting = {
-      enable = true;
-      highlighters = [
-        "brackets"
-      ];
-    };
-    plugins = [
-      {
-        # adds z command for convenient directory switching
-        name = "zsh-z";
-        src = pkgs.fetchFromGitHub {
-          owner = "agkozak";
-          repo = "zsh-z";
-          rev = "afaf296";  # latest commit as of 2024-11-30
-          hash = "sha256-FnGjp/VJLPR6FaODY0GtCwcsTYA4d6D8a6dMmNpXQ+g=";
-        };
-      }
-    ];
-  };
 
   programs.neovim = {
     enable = true;
