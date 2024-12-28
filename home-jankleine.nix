@@ -20,6 +20,7 @@
   home.packages = [
     pkgs.inetutils  # telnet and the likes
     pkgs.rustup
+    pkgs.zulu
   ];
 
   programs.git = {

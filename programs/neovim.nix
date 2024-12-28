@@ -7,22 +7,19 @@
     vimAlias = true;
     vimdiffAlias = true;
     plugins = with pkgs.vimPlugins; [
-      material-nvim
       lualine-nvim
+      nvim-treesitter.withAllGrammars
+      rose-pine
+      telescope-nvim
+      telescope-undo-nvim
     ];
-    extraLuaConfig = ''
-      require('lualine').setup {
-        options = {
-          theme = 'auto'
-        }
-      }
+    extraPackages = [
+      pkgs.ripgrep  # needed for telescope live search
+    ];
+  };
 
-      require('material').setup({
-        lualine_style = 'stealth'
-      })
-
-      vim.g.material_style = "palenight"
-      vim.cmd 'colorscheme material'
-    '';
+  home.file.".config/nvim" = {
+    source = ./neovim;
+    recursive = true;
   };
 }
