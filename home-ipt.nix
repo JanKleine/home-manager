@@ -17,12 +17,12 @@
     ./programs
   ];
 
-  home.packages = [
-    pkgs.colima
-    pkgs.docker
-    pkgs.k9s
-    pkgs.pre-commit
-    pkgs.timewarrior
+  home.packages = with pkgs; [
+    colima
+    docker
+    k9s
+    pre-commit
+    timewarrior
   ];
 
   programs.git = {

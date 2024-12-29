@@ -17,10 +17,10 @@
     ./programs
   ];
 
-  home.packages = [
-    pkgs.inetutils  # telnet and the likes
-    pkgs.rustup
-    pkgs.tree
+  home.packages = with pkgs; [
+    inetutils  # telnet and the likes
+    rustup
+    tree
   ];
 
   programs.git = {
