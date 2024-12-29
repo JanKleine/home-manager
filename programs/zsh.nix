@@ -9,6 +9,12 @@ in
     # Disable generation of .zshenv in home directory. ZDOTDIR is set globally
     # in /etc/zshenv, which is managed by nix-darwin.
     ".zshenv".enable = false;
+
+    # link additional config files
+    "${xdg.configHome}/zsh" = {
+      source = ./zsh;
+      recursive = true;
+    };
   };
 
   home.sessionVariables = {
@@ -39,7 +45,7 @@ in
   programs.zsh = {
     enable = true;
     completionInit = "autoload -U compinit && compinit -u";
-    dotDir = ".config/zsh";
+    dotDir = "${xdg.configHome}/zsh";
     history = {
       extended = true;
       path = "${xdg.dataHome}/zsh/zsh_history";
@@ -47,8 +53,8 @@ in
       size = 100000;
     };
     initExtra = ''
-      source ${xdg.configHome}/home-manager/zsh/powerlevel10k/powerlevel10k.zsh-theme
-      source ${xdg.configHome}/home-manager/zsh/.p10k.zsh
+      source ${xdg.configHome}/zsh/powerlevel10k/powerlevel10k.zsh-theme
+      source ${xdg.configHome}/zsh/.p10k.zsh
     '';
     autosuggestion.enable = true;
     syntaxHighlighting = {
