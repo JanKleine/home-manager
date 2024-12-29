@@ -11,7 +11,7 @@ in
     ".zshenv".enable = false;
 
     # link additional config files
-    "${xdg.configHome}/zsh" = {
+    ".config/zsh" = {
       source = ./zsh;
       recursive = true;
     };
@@ -45,7 +45,8 @@ in
   programs.zsh = {
     enable = true;
     completionInit = "autoload -U compinit && compinit -u";
-    dotDir = "${xdg.configHome}/zsh";
+    # ditDir is relative to the home directory so don't use ${xdg...}
+    dotDir = ".config/zsh";
     history = {
       extended = true;
       path = "${xdg.dataHome}/zsh/zsh_history";
