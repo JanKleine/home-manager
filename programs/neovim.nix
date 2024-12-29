@@ -7,11 +7,16 @@
     vimAlias = true;
     vimdiffAlias = true;
     plugins = with pkgs.vimPlugins; [
+      rose-pine
       lualine-nvim
       nvim-treesitter.withAllGrammars
-      rose-pine
       telescope-nvim
       telescope-undo-nvim
+      nvim-lspconfig
+      cmp-nvim-lsp
+      nvim-cmp
+      mason-nvim
+      mason-lspconfig-nvim
     ];
     extraPackages = [
       pkgs.ripgrep  # needed for telescope live search
