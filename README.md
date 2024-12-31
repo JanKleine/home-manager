@@ -2,19 +2,19 @@
 
 1. Clone Repository
 
-```
+```sh
 git clone --recurse-submodules git@github.com:JanKleine/home-manager.git ~/.config/home-manager
 ```
 
 2. Initialize `home-manager`
 
-```zsh
+```sh
 nix run home-manager/master -- init --switch
 ```
 
 3. Later
 
-```zsh
+```sh
 home-manager switch
 # OR
 hm switch
