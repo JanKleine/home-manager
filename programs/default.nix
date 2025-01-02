@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   imports = [
     ./git.nix
@@ -7,10 +6,8 @@
   ];
 
   # additional packages without more configuration
-  home.packages = with pkgs; [
-    bat
-    fzf
-  ];
+  programs.bat.enable = true;
+  programs.fzf.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
