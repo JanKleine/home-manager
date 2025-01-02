@@ -17,9 +17,14 @@
       nvim-cmp
       mason-nvim
       mason-lspconfig-nvim
+      copilot-lua
+      copilot-lualine
+      copilot-cmp
+      lspkind-nvim
     ];
-    extraPackages = [
-      pkgs.ripgrep  # needed for telescope live search
+    extraPackages = with pkgs; [
+      ripgrep  # needed for telescope live search
+      nodejs-slim_22
     ];
   };
 
