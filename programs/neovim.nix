@@ -21,6 +21,7 @@
       copilot-lualine
       copilot-cmp
       lspkind-nvim
+      gitsigns-nvim
     ];
     extraPackages = with pkgs; [
       ripgrep  # needed for telescope live search
