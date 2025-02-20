@@ -23,6 +23,7 @@
     k9s
     pre-commit
     timewarrior
+    unixtools.watch
   ];
 
   programs.git = {
