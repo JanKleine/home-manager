@@ -21,7 +21,6 @@ in
         url = "https://github.com/romkatv/powerlevel10k";
         rev = "36f3045d69d1ba402db09d09eb12b42eebe0fa3b";
       };
-      recursive = true;
     };
   };
 
