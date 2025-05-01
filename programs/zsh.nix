@@ -53,7 +53,7 @@ in
       save = 100000;
       size = 100000;
     };
-    initExtra = ''
+    initContent = ''
       source ${xdg.configHome}/zsh/powerlevel10k/powerlevel10k.zsh-theme
       source ${xdg.configHome}/zsh/.p10k.zsh
     '';
