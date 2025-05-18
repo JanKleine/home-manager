@@ -23,9 +23,9 @@
       lspkind-nvim
       gitsigns-nvim
     ];
+    withNodeJs = true; # needed for many lsp servers
     extraPackages = with pkgs; [
       ripgrep  # needed for telescope live search
-      nodejs-slim_22
     ];
   };
 
