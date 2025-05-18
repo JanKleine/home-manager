@@ -7,6 +7,7 @@
 
   # additional packages without more configuration
   programs.bat.enable = true;
+  programs.btop.enable = true;
   programs.fzf.enable = true;
 
   # Let Home Manager install and manage itself.
