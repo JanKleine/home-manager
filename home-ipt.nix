@@ -18,12 +18,9 @@
   ];
 
   home.packages = with pkgs; [
-    colima
-    docker
     k9s
     pre-commit
     timewarrior
-    unixtools.watch
   ];
 
   programs.git = {

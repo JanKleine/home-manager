@@ -1,8 +1,16 @@
+{ pkgs, ... }:
 {
   imports = [
     ./git.nix
     ./neovim.nix
     ./zsh.nix
+  ];
+
+  # default nix packages
+  home.packages = with pkgs; [
+    colima
+    docker
+    unixtools.watch
   ];
 
   # additional packages without more configuration
