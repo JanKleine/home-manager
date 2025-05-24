@@ -17,9 +17,7 @@
     ./programs
   ];
 
-  nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
-    claude-code
     k9s
     pre-commit
     timewarrior

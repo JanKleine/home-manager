@@ -6,8 +6,12 @@
     ./zsh.nix
   ];
 
+  # allow non FOSS packages
+  nixpkgs.config.allowUnfree = true;
+
   # default nix packages
   home.packages = with pkgs; [
+    claude-code
     colima
     docker
     unixtools.watch
