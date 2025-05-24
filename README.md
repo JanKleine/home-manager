@@ -3,7 +3,7 @@
 1. Clone Repository
 
 ```sh
-git clone --recurse-submodules git@github.com:JanKleine/home-manager.git ~/.config/home-manager
+git clone git@github.com:JanKleine/home-manager.git ~/.config/home-manager
 ```
 
 2. Initialize `home-manager`
@@ -32,7 +32,7 @@ home-manager/
     ├── default.nix
     ├── git.nix
     ┊
-    ├── zsh/             # additional configs for these programs go here
+    ├── zsh/             # additional configs for these programs go in sub-directories
     └── zsh.nix
 ```
 
