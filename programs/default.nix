@@ -14,6 +14,7 @@
     claude-code
     colima
     docker
+    ripgrep
     unixtools.watch
   ];
 
