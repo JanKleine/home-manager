@@ -52,8 +52,7 @@ in
   programs.zsh = {
     enable = true;
     completionInit = "autoload -U compinit && compinit -u";
-    # ditDir is relative to the home directory so don't use ${xdg...}
-    dotDir = ".config/zsh";
+    dotDir = "${xdg.configHome}/zsh";
     history = {
       extended = true;
       path = "${xdg.dataHome}/zsh/zsh_history";
