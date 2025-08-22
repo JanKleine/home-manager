@@ -18,6 +18,7 @@
   ];
 
   home.packages = with pkgs; [
+    devbox
     gh
     inetutils  # telnet and the likes
     rustup
