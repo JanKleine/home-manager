@@ -15,6 +15,7 @@
     colima
     docker
     ripgrep
+    rsync
     unixtools.watch
   ];
 
