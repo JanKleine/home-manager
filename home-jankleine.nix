@@ -24,8 +24,8 @@
     tree
   ];
 
-  programs.git = {
-    userName = "Jan Kleine";
-    userEmail = "janpaulkleine@icloud.com";
+  programs.git.settings.user = {
+    name = "Jan Kleine";
+    email = "janpaulkleine@icloud.com";
   };
 }

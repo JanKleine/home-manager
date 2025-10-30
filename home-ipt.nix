@@ -23,8 +23,8 @@
     timewarrior
   ];
 
-  programs.git = {
-    userName = "Jan Kleine";
-    userEmail = "jan.kleine@ipt.ch";
+  programs.git.settings.user = {
+    name = "Jan Kleine";
+    email = "jan.kleine@ipt.ch";
   };
 }

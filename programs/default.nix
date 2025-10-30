@@ -24,6 +24,10 @@
   programs.bat.enable = true;
   programs.btop.enable = true;
   programs.fzf.enable = true;
+  programs.difftastic = {
+    enable = true;
+    git.enable = true;
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

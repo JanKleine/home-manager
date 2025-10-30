@@ -1,11 +1,10 @@
 {
   programs.git = {
     enable = true;
-    aliases = {
-      lg = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'";
-    };
-    difftastic.enable = true;
-    extraConfig = {
+    settings = {
+      alias = {
+        lg = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'";
+      };
       # Sign all commits using ssh key
       commit.gpgsign = true;
       gpg.format = "ssh";
@@ -14,8 +13,8 @@
       init.defaultBranch = "main";
       merge.tool = "nvimdiff2";
       mergetool = {
-        keepBackup = false;
-        keepTemporaries = false;
+          keepBackup = false;
+          keepTemporaries = false;
       };
     };
   };
