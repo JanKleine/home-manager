@@ -22,6 +22,8 @@
       copilot-cmp
       lspkind-nvim
       gitsigns-nvim
+      nvim-tree-lua
+      nvim-web-devicons
     ];
     withNodeJs = true; # needed for many lsp servers
     extraPackages = with pkgs; [
