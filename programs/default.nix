@@ -15,6 +15,7 @@
     colima
     devbox
     docker
+    git-crypt
     ripgrep
     rsync
     unixtools.watch
