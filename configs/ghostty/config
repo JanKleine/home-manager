@@ -1,2 +1,3 @@
 font-feature = calt off # turns off ligatures
 shell-integration-features = sudo,ssh-terminfo,ssh-env
+macos-option-as-alt = right
