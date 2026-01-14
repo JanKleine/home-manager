@@ -7,8 +7,9 @@
       };
       # Sign all commits using ssh key
       commit.gpgsign = true;
+      tag.forceSignAnnotated = true;
       gpg.format = "ssh";
-      user.signingkey = "~/.ssh/id_ed25519.pub";
+      user.signingkey = "~/.ssh/id_ed25519_sk_1.pub";
       pull.rebase = "true";
       init.defaultBranch = "main";
       merge.tool = "nvimdiff2";
