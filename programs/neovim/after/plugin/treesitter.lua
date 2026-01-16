@@ -1,4 +1,4 @@
-require('nvim-treesitter.configs').setup {
+require('nvim-treesitter').setup {
     -- This needs to be disabled to work with nix
     auto_install = false,
 
