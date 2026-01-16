@@ -25,4 +25,10 @@
         enable = true;
         enableZshIntegration = true;
     };
+
+    programs.zsh.initContent = ''
+        ssh-add ~/.ssh/id_ed25519_sk_rk_yubikey-1 2>/dev/null || true
+        ssh-add ~/.ssh/id_ed25519_sk_rk_yubikey-2 2>/dev/null || true
+    '';
+
 }

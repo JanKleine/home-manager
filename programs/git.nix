@@ -9,7 +9,7 @@
       commit.gpgsign = true;
       tag.forceSignAnnotated = true;
       gpg.format = "ssh";
-      user.signingkey = "~/.ssh/id_ed25519_sk_1.pub";
+      user.signingkey = "~/.ssh/id_ed25519_sk_rk_yubikey-1.pub";
       pull.rebase = "true";
       push.autoSetupRemote = "true";
       init.defaultBranch = "main";

@@ -62,8 +62,6 @@ in
     initContent = ''
       source ${xdg.configHome}/zsh/powerlevel10k/powerlevel10k.zsh-theme
       source ${xdg.configHome}/zsh/.p10k.zsh
-      ssh-add ~/.ssh/id_ed25519_sk_1 2>/dev/null || true
-      ssh-add ~/.ssh/id_ed25519_sk_2 2>/dev/null || true
     '';
     autosuggestion.enable = true;
     syntaxHighlighting = {
