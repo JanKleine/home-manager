@@ -11,6 +11,7 @@
       gpg.format = "ssh";
       user.signingkey = "~/.ssh/id_ed25519_sk_1.pub";
       pull.rebase = "true";
+      push.autoSetupRemote = "true";
       init.defaultBranch = "main";
       merge.tool = "nvimdiff2";
       mergetool = {
