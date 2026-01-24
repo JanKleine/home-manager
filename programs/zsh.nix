@@ -60,6 +60,12 @@ in
       size = 100000;
     };
     initContent = ''
+      # Ghostty shell integration
+      if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
+        source "$GHOSTTY_RESOURCES_DIR"/shell-integration/zsh/ghostty-integration
+      fi
+
+      # powerlevel 10k setup
       source ${xdg.configHome}/zsh/powerlevel10k/powerlevel10k.zsh-theme
       source ${xdg.configHome}/zsh/.p10k.zsh
     '';
