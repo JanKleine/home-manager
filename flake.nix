@@ -12,19 +12,23 @@
 
   outputs = { nixpkgs, home-manager, ... }:
     let
-      system = "aarch64-darwin";
-      pkgs = nixpkgs.legacyPackages.${system};
+      systems = [
+        "aarch64-darwin"
+      ];
+
+      # helper to generate pkgs for all systems
+      forAllSystems = nixpkgs.lib.genAttrs systems;
+
+      # pkgs for each system
+      pkgsFor = forAllSystems (system: nixpkgs.legacyPackages.${system});
     in {
       homeConfigurations."jankleine" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+        pkgs = pkgsFor.aarch64-darwin;
 
         modules = [ ./home-jankleine.nix ];
-
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
       };
       homeConfigurations."ipt" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+        pkgs = pkgsFor.aarch64-darwin;
 
         modules = [ ./home-ipt.nix ];
       };
