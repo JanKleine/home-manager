@@ -22,15 +22,17 @@
       # pkgs for each system
       pkgsFor = forAllSystems (system: nixpkgs.legacyPackages.${system});
     in {
-      homeConfigurations."jankleine" = home-manager.lib.homeManagerConfiguration {
-        pkgs = pkgsFor.aarch64-darwin;
+      homeConfigurations = {
+        "jankleine" = home-manager.lib.homeManagerConfiguration {
+          pkgs = pkgsFor.aarch64-darwin;
 
-        modules = [ ./home-jankleine.nix ];
-      };
-      homeConfigurations."ipt" = home-manager.lib.homeManagerConfiguration {
-        pkgs = pkgsFor.aarch64-darwin;
+          modules = [ ./home-jankleine.nix ];
+        };
+        "ipt" = home-manager.lib.homeManagerConfiguration {
+          pkgs = pkgsFor.aarch64-darwin;
 
-        modules = [ ./home-ipt.nix ];
+          modules = [ ./home-ipt.nix ];
+        };
       };
     };
 }
