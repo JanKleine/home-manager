@@ -24,6 +24,7 @@
       gitsigns-nvim
       nvim-tree-lua
       nvim-web-devicons
+      markdown-preview-nvim
     ];
     withNodeJs = true; # needed for many lsp servers
     extraPackages = with pkgs; [
