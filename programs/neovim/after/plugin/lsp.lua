@@ -22,7 +22,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set('n', '<leader>rr', function() vim.lsp.buf.references() end, opts)
         vim.keymap.set('n', '<leader>rn', function() vim.lsp.buf.rename() end, opts)
         vim.keymap.set('i', '<C-h>', function() vim.lsp.buf.signature_help() end, opts)
-        vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format() end, opts)
+        vim.keymap.set('n', '<leader>fm', function() vim.lsp.buf.format() end, opts)
     end,
 })
 
