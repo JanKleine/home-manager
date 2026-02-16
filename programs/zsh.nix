@@ -31,7 +31,6 @@ in
     # XDG Data
     AZURE_CONFIG_DIR = "${xdg.dataHome}/azure";
     CARGO_HOME = "${xdg.dataHome}/cargo";
-    GNUPGHOME = "${xdg.dataHome}/gnupg";
     GRADLE_USER_HOME = "${xdg.dataHome}/gradle";
     LEIN_HOME = "${xdg.dataHome}/lein";
     LESSHISTFILE = "${xdg.dataHome}/lesshst";

@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
+let
+  xdg = config.xdg;
+in
 {
   imports = [
     ./git.nix
@@ -26,6 +29,10 @@
   programs.bat.enable = true;
   programs.btop.enable = true;
   programs.fzf.enable = true;
+  programs.gpg = {
+    enable = true;
+    homedir = "${xdg.dataHome}/gnupg";
+  };
   programs.direnv = {
       enable = true;
       enableZshIntegration = true;
