@@ -70,6 +70,7 @@ in
       source ${xdg.configHome}/zsh/.p10k.zsh
     '';
     autosuggestion.enable = true;
+    defaultKeymap = "emacs";
     syntaxHighlighting = {
       enable = true;
       highlighters = [
