@@ -30,7 +30,7 @@ local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = {'rust_analyzer', 'gopls'},
+    ensure_installed = {'rust_analyzer'},
     handlers = {
         function(server_name)
             require('lspconfig')[server_name].setup({
@@ -59,7 +59,8 @@ require('mason-lspconfig').setup({
         end,
         gopls = function()
             require('lspconfig').gopls.setup({
-                capabilities = {
+                capabilities = lsp_capabilities,
+                settings = {
                     gopls = {
                         analyses = {
                             unusedparams = true,
