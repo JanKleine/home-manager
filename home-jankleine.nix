@@ -15,6 +15,7 @@
   imports = [
     ./configs
     ./programs
+    ./programs/ssh-private.nix
   ];
 
   home.packages = with pkgs; [
