@@ -1,3 +1,4 @@
+{ lib, ... }:
 {
   programs.git = {
     enable = true;
@@ -9,7 +10,8 @@
       commit.gpgsign = true;
       tag.forceSignAnnotated = true;
       gpg.format = "ssh";
-      user.signingkey = "~/.ssh/id_ed25519_sk_rk_yubikey-1.pub";
+      # allow to be overwritten in user config
+      user.signingkey = lib.mkDefault "~/.ssh/id_ed25519_sk_rk_yubikey-1.pub";
       pull.rebase = "true";
       push.autoSetupRemote = "true";
       init.defaultBranch = "main";
