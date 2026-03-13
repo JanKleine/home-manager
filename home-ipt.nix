@@ -18,7 +18,6 @@
   ];
 
   home.packages = with pkgs; [
-    k9s
     pre-commit
     timewarrior
   ];

@@ -20,6 +20,7 @@ in
     devbox
     docker
     git-crypt
+    k9s
     ripgrep
     rsync
     unixtools.watch

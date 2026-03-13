@@ -22,8 +22,8 @@
     gh
     inetutils  # telnet and the likes
     rustup
-    tree
     talosctl
+    tree
   ];
 
   programs.git.settings.user = {
