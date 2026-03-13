@@ -21,6 +21,7 @@ in
     docker
     git-crypt
     k9s
+    kubectl
     ripgrep
     rsync
     unixtools.watch
