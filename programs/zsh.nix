@@ -26,7 +26,8 @@ in
 
   home.sessionVariables = {
     # XDG Config
-    DOCKER_CONFIG="${xdg.configHome}/docker";
+    DOCKER_CONFIG = "${xdg.configHome}/docker";
+    KUBECONFIG = "${xdg.configHome}/kube/config";
 
     # XDG Data
     AZURE_CONFIG_DIR = "${xdg.dataHome}/azure";
@@ -40,6 +41,9 @@ in
     VAGRANT_HOME = "${xdg.dataHome}/vagrant";
     VSCODE_EXTENSIONS = "${xdg.dataHome}/vscode/extensions";
     _Z_DATA = "${xdg.dataHome}/z/z";
+
+    # XDG Cache
+    KUBECACHEDIR = "${xdg.cacheHome}/kube";
   };
 
   home.shellAliases = {
