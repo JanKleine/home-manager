@@ -22,6 +22,7 @@ in
     git-crypt
     k9s
     kubectl
+    kubernetes-helm
     ripgrep
     rsync
     unixtools.watch
