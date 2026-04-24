@@ -10,19 +10,21 @@ lspconfig_defaults.capabilities = vim.tbl_deep_extend(
 vim.api.nvim_create_autocmd('LspAttach', {
     desc = 'LSP actions',
     callback = function(event)
-        local opts = {buffer = event.buf}
+        local function map(mode, lhs, rhs, desc)
+            vim.keymap.set(mode, lhs, rhs, { buffer = event.buf, desc = desc })
+        end
 
-        vim.keymap.set('n', 'gd', function() vim.lsp.buf.definition() end, opts)
-        vim.keymap.set('n', 'K', function() vim.lsp.buf.hover() end, opts)
-        vim.keymap.set('n', '<leader>ws', function() vim.lsp.buf.workspace_symbol() end, opts)
-        vim.keymap.set('n', '<leader>d', function() vim.diagnostic.open_float() end, opts)
-        vim.keymap.set('n', '[d', function() vim.diagnostic.jump({count=1, float=true}) end, opts)
-        vim.keymap.set('n', ']d', function() vim.diagnostic.jump({count=-1, float=true}) end, opts)
-        vim.keymap.set({'n', 'v'}, '<leader>ca', function() vim.lsp.buf.code_action() end, opts)
-        vim.keymap.set('n', '<leader>rr', function() vim.lsp.buf.references() end, opts)
-        vim.keymap.set('n', '<leader>rn', function() vim.lsp.buf.rename() end, opts)
-        vim.keymap.set('i', '<C-h>', function() vim.lsp.buf.signature_help() end, opts)
-        vim.keymap.set('n', '<leader>fm', function() vim.lsp.buf.format() end, opts)
+        map('n', 'gd', function() vim.lsp.buf.definition() end, 'Go to definition')
+        map('n', 'K', function() vim.lsp.buf.hover() end, 'Hover docs')
+        map('n', '<leader>ws', function() vim.lsp.buf.workspace_symbol() end, 'Workspace symbol')
+        map('n', '<leader>cd', function() vim.diagnostic.open_float() end, 'Line diagnostic')
+        map('n', '[d', function() vim.diagnostic.jump({count=1, float=true}) end, 'Next diagnostic')
+        map('n', ']d', function() vim.diagnostic.jump({count=-1, float=true}) end, 'Prev diagnostic')
+        map({'n', 'v'}, '<leader>ca', function() vim.lsp.buf.code_action() end, 'Code action')
+        map('n', '<leader>rr', function() vim.lsp.buf.references() end, 'References')
+        map('n', '<leader>rn', function() vim.lsp.buf.rename() end, 'Rename symbol')
+        map('i', '<C-h>', function() vim.lsp.buf.signature_help() end, 'Signature help')
+        map('n', '<leader>fm', function() vim.lsp.buf.format() end, 'Format buffer')
     end,
 })
 
