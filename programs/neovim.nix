@@ -26,10 +26,15 @@
       nvim-web-devicons
       markdown-preview-nvim
       which-key-nvim
+      nvim-dap
+      nvim-dap-ui
+      nvim-nio
+      nvim-dap-virtual-text
     ];
     withNodeJs = true; # needed for many lsp servers
     extraPackages = with pkgs; [
       ripgrep  # needed for telescope live search
+      go # for delve debugging
     ];
   };
 
