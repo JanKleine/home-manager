@@ -46,6 +46,10 @@ in
     KUBECACHEDIR = "${xdg.cacheHome}/kube";
   };
 
+  home.sessionPath = [
+    "${xdg.dataHome}/cargo/bin"
+  ];
+
   home.shellAliases = {
     ".." = "cd ..";
     "ll" = "ls -lahp --color=auto";
