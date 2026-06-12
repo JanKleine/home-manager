@@ -32,6 +32,8 @@
       nvim-dap-virtual-text
     ];
     withNodeJs = true; # needed for many lsp servers
+    withRuby = false; # no ruby remote plugins in use (new default in 26.05)
+    withPython3 = false; # no python3 remote plugins in use (new default in 26.05)
     extraPackages = with pkgs; [
       ripgrep  # needed for telescope live search
       go # for delve debugging

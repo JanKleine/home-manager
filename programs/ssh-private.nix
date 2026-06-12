@@ -1,18 +1,18 @@
 { pkgs, ... }:
 {
-    programs.ssh.matchBlocks = {
+    programs.ssh.settings = {
         "debian" = {
-            hostname = "jankleine.de";
-            user = "jan";
-            port = 22203;
-            addKeysToAgent = "yes";
-            forwardAgent = true;
+            HostName = "jankleine.de";
+            User = "jan";
+            Port = 22203;
+            AddKeysToAgent = "yes";
+            ForwardAgent = true;
         };
         "docker" = {
-            hostname = "jankleine.de";
-            user = "host";
-            addKeysToAgent = "yes";
-            forwardAgent = true;
+            HostName = "jankleine.de";
+            User = "host";
+            AddKeysToAgent = "yes";
+            ForwardAgent = true;
         };
     };
 }
