@@ -26,6 +26,7 @@
       nvim-web-devicons
       markdown-preview-nvim
       which-key-nvim
+      claudecode-nvim # Claude Code IDE integration (select + @-mention, in-editor diffs)
       nvim-dap
       nvim-dap-ui
       nvim-nio
