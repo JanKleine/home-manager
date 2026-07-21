@@ -17,9 +17,6 @@
       nvim-cmp
       mason-nvim
       mason-lspconfig-nvim
-      copilot-lua
-      copilot-lualine
-      copilot-cmp
       lspkind-nvim
       gitsigns-nvim
       nvim-tree-lua

@@ -1,17 +1,13 @@
 local cmp = require('cmp')
 local lspkind = require('lspkind')
 
-require("copilot_cmp").setup()
-
 cmp.setup({
     sources = {
-        { name = 'copilot' },
         { name = 'nvim_lsp' },
     },
     formatting = {
         format = lspkind.cmp_format {
             mode = 'symbol',
-            symbol_map = { Copilot = "" },
         },
     },
     mapping = cmp.mapping.preset.insert({
