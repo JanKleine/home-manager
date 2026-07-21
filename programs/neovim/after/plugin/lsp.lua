@@ -14,14 +14,19 @@ vim.api.nvim_create_autocmd('LspAttach', {
             vim.keymap.set(mode, lhs, rhs, { buffer = event.buf, desc = desc })
         end
 
-        map('n', 'gd', function() vim.lsp.buf.definition() end, 'Go to definition')
+        local tb = require('telescope.builtin')
+
+        map('n', 'gd', tb.lsp_definitions, 'Go to definition')
+        map('n', 'gI', tb.lsp_implementations, 'Go to implementation')
+        map('n', 'gy', tb.lsp_type_definitions, 'Go to type definition')
         map('n', 'K', function() vim.lsp.buf.hover() end, 'Hover docs')
-        map('n', '<leader>ws', function() vim.lsp.buf.workspace_symbol() end, 'Workspace symbol')
+        map('n', '<leader>ds', tb.lsp_document_symbols, 'Document symbols')
+        map('n', '<leader>ws', tb.lsp_dynamic_workspace_symbols, 'Workspace symbol')
         map('n', '<leader>cd', function() vim.diagnostic.open_float() end, 'Line diagnostic')
         map('n', '[d', function() vim.diagnostic.jump({count=1, float=true}) end, 'Next diagnostic')
         map('n', ']d', function() vim.diagnostic.jump({count=-1, float=true}) end, 'Prev diagnostic')
         map({'n', 'v'}, '<leader>ca', function() vim.lsp.buf.code_action() end, 'Code action')
-        map('n', '<leader>rr', function() vim.lsp.buf.references() end, 'References')
+        map('n', '<leader>rr', tb.lsp_references, 'References')
         map('n', '<leader>rn', function() vim.lsp.buf.rename() end, 'Rename symbol')
         map('i', '<C-h>', function() vim.lsp.buf.signature_help() end, 'Signature help')
         map('n', '<leader>fm', function() vim.lsp.buf.format() end, 'Format buffer')
