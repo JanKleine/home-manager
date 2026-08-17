@@ -28,6 +28,7 @@
       nvim-dap-ui
       nvim-nio
       nvim-dap-virtual-text
+      vim-tmux-navigator # C-hjkl pane movement shared with tmux
     ];
     withNodeJs = true; # needed for many lsp servers
     withRuby = false; # no ruby remote plugins in use (new default in 26.05)
